@@ -4,9 +4,8 @@ import csv
 
 
 # Set path for file
+csvpath = os.path.join("..","Resources","budget_data.csv").replace("\\", "/")
 
-#csvpath = os.path.join("budget_data.csv")
-csvpath = os.path.join("..","PyBank","Resources","budget_data.csv").replace("\\", "/")
 
 # Lists to store datas
 date = []
@@ -82,7 +81,7 @@ with open(csvpath) as csvfile:
 
     
     
-    #Printing Summarized Analysis in Terminal
+    #Printing Summarized Analysis
     print("Financial Analysis")
     print("-------------------------")
     print(f"Total Months: {month_count}")
@@ -91,15 +90,7 @@ with open(csvpath) as csvfile:
     print(f"Greatest Increase in Profits: {(greatest_inc_date[0])} (${greatest_inc_amount[0]})")
     print(f"Greatest Decrease in Profits: {greatest_dec_date[0]}(${greatest_dec_amount[0]})")
 
-    #Exporting file to text file
-    #output_file = os.path.join("output_file.txt")
-    output_file = os.path.join("..","PyBank","analysis","output_file.txt").replace("\\", "/")
-    with open(output_file, "w") as datafile:
-        print("Financial Analysis",file=datafile)
-        print("-------------------------",file=datafile)
-        print(f"Total Months: {month_count}",file=datafile)
-        print(f"Total ${Total}",file=datafile)
-        print(f"Average Change: ${monthly_average}",file=datafile)
-        print(f"Greatest Increase in Profits: {(greatest_inc_date[0])} (${greatest_inc_amount[0]})",file=datafile)
-        print(f"Greatest Decrease in Profits: {greatest_dec_date[0]}(${greatest_dec_amount[0]})",file=datafile)
+#Exporting file to text file
+#with open("output_file.txt", "w") as datafile:
+    
     
